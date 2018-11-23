@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>login</title>
+    <script type="text/javascript"src="/cozy/js/vendor/jquery-3.3.1.min.js"  >
+    </script>
+  </head>
+  <body>
+
+    <button type="button" name="button" onclick="getlocation()">try it</button>
+    <div id="output">
+    </div>
+    <script type="text/javascript">
+
+    var x = document.getElementById('output');
+
+    function getlocation(){
+      if(navigator.getlocation){
+        navigator.getlocation.getCurrentPosition(showPosition);
+      }else{
+        x.innerHTML = "Browers not supporting";
+      }
+    }
+
+    function showPosition(){
+      x.innerHTML = "lattitude" + position.coords.latitude;
+      x.innerHTML += "<br>";
+      x.innerHTML += "longitude"+ position.coords.longitude;
+    }
+
+    </script>
+
+  </body>
+</html>
